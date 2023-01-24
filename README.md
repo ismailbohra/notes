@@ -1,4 +1,4 @@
-# Scientific-Learning-Collage-Medicaps
+# IPS Academy Indore
 
 ## Syllabus
 
