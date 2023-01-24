@@ -1,0 +1,935 @@
+```SHAPES
+#include<graphics.h>  
+    
+    main()  
+    {  
+        int gd=DETECT,gm;  
+        initgraph (&gd,&gm,(char*)"");  
+        
+        
+        setcolor(YELLOW);
+        line(50,40,190,40);  
+         
+        setcolor(WHITE);
+        rectangle(12,115,215,165);  
+        
+        setcolor(YELLOW);
+        arc(120,200,180,0,30);  
+        
+	setcolor(WHITE); 
+        circle(120,270,30);  
+        
+	setcolor(YELLOW);  
+        ellipse(120,350,0,360,30,20);  
+        
+        getch();  
+    }
+```
+
+
+
+```HOUSE
+#include<iostream.h>
+#include<conio.h>
+#include<graphics.h>
+
+main ()
+{
+  int gd = DETECT, gm;
+  initgraph(&gd,&gm,"C:\\tc\\bgi");
+
+  setcolor (WHITE);
+  line (200, 100, 150, 180);
+  line (200, 100, 250, 180);
+  line (200, 100, 370, 100);
+  line (370, 100, 420, 180);
+
+  rectangle (150, 180, 250, 300);
+  rectangle (250, 180, 420, 300);
+  rectangle (180, 250, 220, 300);
+  rectangle (280, 250, 410, 210);
+
+
+  getch ();
+}
+```
+
+
+```CAR
+#include<iostream.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+
+void main()
+{
+clrscr();
+int gd=DETECT,gm;
+initgraph(&gd,&gm,"C:\\tc\\bgi");
+
+
+for (int i=0;i<500;i++)
+{
+/***CAR BODY ******/
+line(50+i,370,90+i,370);
+arc(110+i,370,0,180,20);
+line(130+i,370,220+i,370);
+arc(240+i,370,0,180,20);
+line(260+i,370,300+i,370);
+line(300+i,370,300+i,350);
+line(300+i,350,240+i,330);
+line(240+i,330,200+i,300);
+line(200+i,300,110+i,300);
+line(110+i,300,80+i,330);
+line(80+i,330,50+i,340);
+line(50+i,340,50+i,370);
+
+/***CAR Windows***/
+line(165+i,305,165+i,330);
+line(165+i,330,230+i,330);
+line(230+i,330,195+i,305);
+line(195+i,305,165+i,305);
+
+line(160+i,305,160+i,330);
+line(160+i,330,95+i,330);
+line(95+i,330,120+i,305);
+line(120+i,305,160+i,305);
+
+/**Wheels**/
+circle(110+i,370,17);
+circle(240+i,370,17);
+
+delay(10);
+cleardevice();
+
+line(0,390,639,390);  //ROAD
+}
+getch();
+}
+```
+
+
+```MAN WITH UMBRELLA
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<stdlib.h>
+#include<dos.h>
+void main()
+{
+int gd=DETECT,gm;
+int rhx,rhy,j,i;
+clrscr();
+initgraph(&gd,&gm,"c:\\tc\\bgi");
+for(i=0;i<500;i+=5)
+{
+line(20,380,580,380); //platform
+
+if(i%2==0)
+{
+line(25+i,380,35+i,340); //leftleg
+line(45+i,380,35+i,340);//right leg
+line(35+i,310,25+i,330);//left hand
+delay(20);
+}
+else
+{
+line(35+i,380,35+i,340);
+line(35+i,310,40+i,330);
+delay(20);
+}
+
+line(35+i,340,35+i,310); //body
+circle(35+i,300,10); //head
+line(35+i,310,50+i,330); // hand
+line(50+i,330,50+i,280); //umbrella stick
+line(15+i,280,85+i,280); //umbrella right
+
+arc(50+i,280,0,180,35); //umbrella body
+arc(55+i,330,180,360,5);//umbrella handle
+rhx=getmaxx();
+rhy=getmaxy();
+for(j=0;j<100;j++)
+{
+outtextxy(random(rhx),random(rhy-50),"|");
+
+setcolor(WHITE);
+}
+delay(150);
+cleardevice();
+}
+
+getch();
+}
+```
+
+
+```Bouncing Ball
+#include<dos.h>
+#include<iostream.h>
+#include<graphics.h>
+#include<math.h>
+#include<conio.h>
+void
+main ()
+{
+
+  int gd = DETECT, gm;
+  initgraph (&gd, &gm, "C:\\tc\\bgi");
+  float x = 1, y = 0.00000, j = .5, count = .1;
+  float r = 15;
+  setcolor (14);
+  line (0, 215, 650, 215);
+  sleep (1);
+  for (int k = 0; k <= 7; k++)
+    {
+
+      for (float i = 90; i < 270; i += 10)
+	{
+	  y = cos (((i * 22 / 7) / 180)) / j;
+
+	  if (y > 0)
+	    y = -y;
+	  x += 5;
+
+	  setcolor (0);
+	  setfillstyle (1, 3);
+	  circle (x, y * 100 + 200, r);
+	  floodfill (x, y * 100 + 200, 14);
+
+	  delay (100);
+
+	  setcolor (0);
+	  setfillstyle (1, 0);
+	  circle (x, y * 100 + 200, r);
+	  floodfill (x, y * 100 + 200, 0);
+
+	}
+
+      j += count;
+      count += .1;
+
+    }
+  getch ();
+}
+
+```
+
+
+``` Flying Kite
+#include<stdio.h>
+#include<time.h>
+#include<conio.h>
+#include<graphics.h>
+#include<stdlib.h>
+#include<dos.h>
+
+void
+main ()
+{
+  int gd = DETECT, gm;
+  int x = 10, y = 480;
+  initgraph (&gd, &gm, "c:\\tc\\bgi");
+  while (!kbhit ())
+    {
+      cleardevice ();
+      if (y == 0)
+	{
+	  y = random (480);
+	  x = random (640);
+	}
+      else
+	{
+	  y = y - 1;
+	  x = x + 1;
+	  line (x - 50, y, x, y - 70);
+	  line (x, y - 70, x + 50, y);
+	  line (x + 50, y, x, y + 70);
+	  line (x, y + 70, x - 50, y);
+	  line (x, y - 70, x, y + 70);
+	  line (x, y + 70, x + 10, y + 140);
+	  line (x, y + 70, x - 10, y + 140);
+	  line (x - 50, y, x + 50, y);
+	  line (x, y, x + 130, y + 640);
+	}
+      delay (20);
+    }
+  closegraph ();
+  restorecrtmode ();
+}
+```
+
+```Rainbow
+// A C program to make a rainbow. This program would only
+// work in Turbo C compiler in DOS compatible machine
+#include<stdio.h>
+#include<graphics.h>
+#include<dos.h>
+
+// function for making of rainbow
+void rainbow()
+{
+	// auto detection
+	int gdriver = DETECT,gmode;
+	int x, y, i;
+
+	// initialize graphics mode(passed three arguments to
+	// initgraph function)
+	// &gdriver is the address of gdriver variable, &gmode is
+	// the address of gmode and
+	// "C:\\Turboc3\\BGI" is the directory path where BGI files are stored
+	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI");
+
+	x = getmaxx() / 2;//finding centre x-ordinate of screen
+	y = getmaxy() / 2;//finding centre y-ordinate of screen
+
+	for (i=30; i<200; i++)
+	{
+		// delay function under dos.h for holding the
+		// function for some time
+		delay(100);
+
+		// selecting color for making of rainbow
+		setcolor(i/10);
+
+		// making of arc with fixed centre and increasing radius
+		arc(x, y, 0, 180, i-10);
+	}
+}
+// driver program
+int main()
+{
+	rainbow();
+	return 0;
+}
+```
+
+```RAM
+#include <stdio.h>
+#include <conio.h>
+#include<dos.h>
+int a;
+void
+main ()
+{
+  clrscr ();
+  for (a = 1; a < 29; a++)
+    {
+      gotoxy (a, 13);		//goto coordinates (x, y) and print
+      delay (200);		//stay for a moment
+      textcolor (a);
+      cprintf ("Ram");
+    }
+  for (a = 65; a > 28; a--)
+    {
+      gotoxy (a, 13);		//goto coordinates (x, y) and print
+      delay (200);		//stay for a moment
+      textcolor (a);
+      cprintf ("Ram");
+    }
+  getch ();
+}
+```
+
+```dda line
+#include<graphics.h>
+#include<conio.h>
+#include<stdio.h>
+void
+main ()
+{
+  int gd = DETECT, gm, i;
+  float x, y, dx, dy, steps;
+  int x0, x1, y0, y1;
+  initgraph (&gd, &gm, "C:\\TC\\BGI");
+  setbkcolor (WHITE);
+  x0 = 100, y0 = 200, x1 = 500, y1 = 300;
+  dx = (float) (x1 - x0);
+  dy = (float) (y1 - y0);
+  if (dx >= dy)
+    {
+      steps = dx;
+    }
+  else
+    {
+      steps = dy;
+    }
+  dx = dx / steps;
+  dy = dy / steps;
+  x = x0;
+  y = y0;
+  i = 1;
+  while (i <= steps)
+    {
+      putpixel (x, y, RED);
+      x += dx;
+      y += dy;
+      i = i + 1;
+    }
+  getch ();
+  closegraph ();
+}
+
+```
+
+
+```Bresenham line algo
+#include<stdio.h>  
+#include<graphics.h>  
+void drawline(int x0, int y0, int x1, int y1)  
+{  
+    int dx, dy, p, x, y;  
+    dx=x1-x0;  
+    dy=y1-y0;  
+    x=x0;  
+    y=y0;  
+    p=2*dy-dx;  
+    while(x<x1)  
+    {  
+        if(p>=0)  
+        {  
+            putpixel(x,y,7);  
+            y=y+1;  
+            p=p+2*dy-2*dx;  
+        }  
+        else  
+        {  
+            putpixel(x,y,7);  
+            p=p+2*dy;}  
+            x=x+1;  
+        }  
+}  
+int main()  
+{  
+    int gdriver=DETECT, gmode, error, x0, y0, x1, y1;  
+    initgraph(&gdriver, &gmode, "c:\\tc\\bgi");  
+    printf("Enter co-ordinates of first point: ");  
+    scanf("%d%d", &x0, &y0);  
+    printf("Enter co-ordinates of second point: ");  
+    scanf("%d%d", &x1, &y1);  
+    drawline(x0, y0, x1, y1);  
+    return 0;  
+}  
+```
+
+```Flood-Fill
+#include<stdio.h>
+#include<graphics.h>
+#include<dos.h>
+
+void
+floodFill (int x, int y, int oldcolor, int newcolor)
+{
+  if (getpixel (x, y) == oldcolor)
+    {
+      putpixel (x, y, newcolor);
+      floodFill (x + 1, y, oldcolor, newcolor);
+      floodFill (x, y + 1, oldcolor, newcolor);
+      floodFill (x - 1, y, oldcolor, newcolor);
+      floodFill (x, y - 1, oldcolor, newcolor);
+    }
+}
+
+//getpixel(x,y) gives the color of specified pixel
+
+int
+main ()
+{
+  int gm, gd = DETECT, radius;
+  int x, y;
+  printf ("Enter x and y positions for circle\n");
+  scanf ("%d%d", &x, &y);
+  printf ("Enter radius of circle\n");
+  scanf ("%d", &radius);
+  initgraph (&gd, &gm, "c:\\tc\\bgi");
+  circle (x, y, radius);
+  floodFill (x, y, 0, 15);
+  delay (5000);
+  closegraph ();
+  return 0;
+}
+
+```
+
+```Boundary Fill
+// C Implementation for Boundary Filling Algorithm
+#include <graphics.h>
+#include<conio.h>
+
+// Function for 4 connected Pixels
+void boundaryFill4(int x, int y, int fill_color,int boundary_color)
+{
+	if(getpixel(x, y) != boundary_color &&
+	getpixel(x, y) != fill_color)
+	{
+		putpixel(x, y, fill_color);
+		boundaryFill4(x + 1, y, fill_color, boundary_color);
+		boundaryFill4(x, y + 1, fill_color, boundary_color);
+		boundaryFill4(x - 1, y, fill_color, boundary_color);
+		boundaryFill4(x, y - 1, fill_color, boundary_color);
+	}
+}
+
+int main()
+{
+
+	int gd = DETECT, gm;
+
+
+	initgraph(&gd, &gm, "c:\\tc\\bgi");
+
+	int x = 250, y = 200, radius = 50;
+
+	// circle function
+	circle(x, y, radius);
+
+	// Function calling
+	boundaryFill4(x, y, 6, 15);
+
+// 	delay(1000);
+
+	getch();
+
+
+	closegraph();
+
+	return 0;
+}
+
+```
+
+``` Transformation
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include<math.h>
+void main()
+{
+            int gm;
+            int gd=DETECT;
+            int x1,x2,x3,y1,y2,y3,nx1,nx2,nx3,ny1,ny2,ny3,c;
+            int sx,sy,xt,yt,r;
+            float t;
+            initgraph(&gd,&gm,"c:\\tc\\bgi");
+            printf("\t Program for basic transactions");
+            printf("\n\t Enter the points of triangle");
+            setcolor(1);
+            scanf("%d%d%d%d%d%d",&x1,&y1,&x2,&y2,&x3,&y3);
+            line(x1,y1,x2,y2);
+            line(x2,y2,x3,y3);
+            line(x3,y3,x1,y1);
+            getch();
+            printf("\n 1.Transaction\n 2.Rotation\n 3.Scalling\n 4.exit");
+            printf("Enter your choice:\n");
+            scanf("%d",&c);
+            switch(c)
+            {
+                        case 1:
+                                    printf("\n Enter the translation factor");
+                                    scanf("%d%d",&xt,&yt);
+                                    nx1=x1+xt;
+                                    ny1=y1+yt;
+                                    nx2=x2+xt;
+                                    ny2=y2+yt;
+                                    nx3=x3+xt;
+                                    ny3=y3+yt;
+                                    line(nx1,ny1,nx2,ny2);
+                                    line(nx2,ny2,nx3,ny3);
+                                    line(nx3,ny3,nx1,ny1);
+                                    getch();
+
+                        case 2:
+                                    printf("\n Enter the angle of rotation");
+                                    scanf("%d",&r);
+                                    t=3.14*r/180;
+                                    nx1=abs(x1*cos(t)-y1*sin(t));
+                                    ny1=abs(x1*sin(t)+y1*cos(t));
+                                    nx2=abs(x2*cos(t)-y2*sin(t));
+                                    ny2=abs(x2*sin(t)+y2*cos(t));
+                                    nx3=abs(x3*cos(t)-y3*sin(t));
+                                    ny3=abs(x3*sin(t)+y3*cos(t));
+                                    line(nx1,ny1,nx2,ny2);
+                                    line(nx2,ny2,nx3,ny3);
+                                    line(nx3,ny3,nx1,ny1);
+                                    getch();
+
+                        case 3:
+                                    printf("\n Enter the scalling factor");
+                                    scanf("%d%d",&sx,&sy);
+                                    nx1=x1*sx;
+                                    ny1=y2*sy;
+                                    nx2=x2*sx;
+                                    ny2=y2*sy;
+                                    nx3=x3*sx;
+                                    ny3=y3*sy;
+                                    line(nx1,ny1,nx2,ny2);
+                                    line(nx2,ny2,nx3,ny3);
+                                    line(nx3,ny3,nx1,ny1);
+                                    getch();
+
+                        case 4:
+                                    break;
+                        default:
+                                    printf("Enter the correct choice");
+                                    }
+                                    closegraph();
+                                    }
+                                    
+```
+
+```Line Clipping
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<graphics.h>
+#include<dos.h>
+
+typedef struct coordinate
+{
+  int x, y;
+  char code[4];
+} PT;
+
+void drawwindow ();
+void drawline (PT p1, PT p2);
+PT setcode (PT p);
+int visibility (PT p1, PT p2);
+PT resetendpt (PT p1, PT p2);
+
+void
+main ()
+{
+  int gd = DETECT, v, gm;
+  PT p1, p2, p3, p4, ptemp;
+  printf ("\nEnter x1 and y1\n");
+  scanf ("%d %d", &p1.x, &p1.y);
+  printf ("\nEnter x2 and y2\n");
+  scanf ("%d %d", &p2.x, &p2.y);
+  initgraph (&gd, &gm, "c:\\tc\\bgi");
+  drawwindow ();
+  delay (500);
+  drawline (p1, p2);
+  delay (500);
+  cleardevice ();
+  delay (500);
+  p1 = setcode (p1);
+  p2 = setcode (p2);
+  v = visibility (p1, p2);
+  delay (500);
+  switch (v)
+    {
+    case 0:
+      drawwindow ();
+      delay (500);
+      drawline (p1, p2);
+      break;
+    case 1:
+      drawwindow ();
+      delay (500);
+      break;
+    case 2:
+      p3 = resetendpt (p1, p2);
+      p4 = resetendpt (p2, p1);
+      drawwindow ();
+      delay (500);
+      drawline (p3, p4);
+      break;
+    }
+  delay (5000);
+  closegraph ();
+}
+
+void
+drawwindow ()
+{
+  line (150, 100, 450, 100);
+  line (450, 100, 450, 350);
+  line (450, 350, 150, 350);
+  line (150, 350, 150, 100);
+}
+
+void
+drawline (PT p1, PT p2)
+{
+  line (p1.x, p1.y, p2.x, p2.y);
+}
+
+PT
+setcode (PT p)			//for setting the 4 bit code
+{
+  PT ptemp;
+  if (p.y < 100)
+    ptemp.code[0] = '1';	//Top
+  else
+    ptemp.code[0] = '0';
+  if (p.y > 350)
+    ptemp.code[1] = '1';	//Bottom
+  else
+    ptemp.code[1] = '0';
+  if (p.x > 450)
+    ptemp.code[2] = '1';	//Right
+  else
+    ptemp.code[2] = '0';
+  if (p.x < 150)
+    ptemp.code[3] = '1';	//Left
+  else
+    ptemp.code[3] = '0';
+  ptemp.x = p.x;
+  ptemp.y = p.y;
+  return (ptemp);
+}
+
+int
+visibility (PT p1, PT p2)
+{
+  int i, flag = 0;
+  for (i = 0; i < 4; i++)
+    {
+      if ((p1.code[i] != '0') || (p2.code[i] != '0'))
+	flag = 1;
+    }
+  if (flag == 0)
+    return (0);
+  for (i = 0; i < 4; i++)
+    {
+      if ((p1.code[i] == p2.code[i]) && (p1.code[i] == '1'))
+	flag = '0';
+    }
+  if (flag == 0)
+    return (1);
+  return (2);
+}
+
+PT
+resetendpt (PT p1, PT p2)
+{
+  PT temp;
+  int x, y, i;
+  float m, k;
+  if (p1.code[3] == '1')
+    x = 150;
+  if (p1.code[2] == '1')
+    x = 450;
+  if ((p1.code[3] == '1') || (p1.code[2] == '1'))
+    {
+      m = (float) (p2.y - p1.y) / (p2.x - p1.x);
+      k = (p1.y + (m * (x - p1.x)));
+      temp.y = k;
+      temp.x = x;
+      for (i = 0; i < 4; i++)
+	temp.code[i] = p1.code[i];
+      if (temp.y <= 350 && temp.y >= 100)
+	return (temp);
+    }
+  if (p1.code[0] == '1')
+    y = 100;
+  if (p1.code[1] == '1')
+    y = 350;
+  if ((p1.code[0] == '1') || (p1.code[1] == '1'))
+    {
+      m = (float) (p2.y - p1.y) / (p2.x - p1.x);
+      k = (float) p1.x + (float) (y - p1.y) / m;
+      temp.x = k;
+      temp.y = y;
+      for (i = 0; i < 4; i++)
+	temp.code[i] = p1.code[i];
+      return (temp);
+    }
+  else
+    return (p1);
+}
+
+```
+
+```polygon
+
+#include<iostream.h>
+#include<conio.h>
+#include<graphics.h>
+#define round(a) ((int)(a+0.5))
+int k;
+float xmin, ymin, xmax, ymax, arr[20], m;
+void
+clipl (float x1, float y1, float x2, float y2)
+{
+  if (x2 - x1)
+    m = (y2 - y1) / (x2 - x1);
+  else
+    m = 100000;
+  if (x1 >= xmin && x2 >= xmin)
+    {
+      arr[k] = x2;
+      arr[k + 1] = y2;
+      k += 2;
+    }
+  if (x1 < xmin && x2 >= xmin)
+    {
+      arr[k] = xmin;
+      arr[k + 1] = y1 + m * (xmin - x1);
+      arr[k + 2] = x2;
+      arr[k + 3] = y2;
+      k += 4;
+    }
+  if (x1 >= xmin && x2 < xmin)
+    {
+      arr[k] = xmin;
+      arr[k + 1] = y1 + m * (xmin - x1);
+      k += 2;
+    }
+}
+
+void
+clipt (float x1, float y1, float x2, float y2)
+{
+  if (y2 - y1)
+    m = (x2 - x1) / (y2 - y1);
+  else
+    m = 100000;
+  if (y1 <= ymax && y2 <= ymax)
+    {
+      arr[k] = x2;
+      arr[k + 1] = y2;
+      k += 2;
+    }
+  if (y1 > ymax && y2 <= ymax)
+    {
+      arr[k] = x1 + m * (ymax - y1);
+      arr[k + 1] = ymax;
+      arr[k + 2] = x2;
+      arr[k + 3] = y2;
+      k += 4;
+    }
+  if (y1 <= ymax && y2 > ymax)
+    {
+      arr[k] = x1 + m * (ymax - y1);
+      arr[k + 1] = ymax;
+      k += 2;
+    }
+}
+
+void
+clipr (float x1, float y1, float x2, float y2)
+{
+  if (x2 - x1)
+    m = (y2 - y1) / (x2 - x1);
+  else
+    m = 100000;
+  if (x1 <= xmax && x2 <= xmax)
+    {
+      arr[k] = x2;
+      arr[k + 1] = y2;
+      k += 2;
+    }
+  if (x1 > xmax && x2 <= xmax)
+    {
+      arr[k] = xmax;
+      arr[k + 1] = y1 + m * (xmax - x1);
+      arr[k + 2] = x2;
+      arr[k + 3] = y2;
+      k += 4;
+    }
+  if (x1 <= xmax && x2 > xmax)
+    {
+      arr[k] = xmax;
+      arr[k + 1] = y1 + m * (xmax - x1);
+      k += 2;
+    }
+}
+
+void
+clipb (float x1, float y1, float x2, float y2)
+{
+  if (y2 - y1)
+    m = (x2 - x1) / (y2 - y1);
+  else
+    m = 100000;
+  if (y1 >= ymin && y2 >= ymin)
+    {
+      arr[k] = x2;
+      arr[k + 1] = y2;
+      k += 2;
+    }
+  if (y1 < ymin && y2 >= ymin)
+    {
+      arr[k] = x1 + m * (ymin - y1);
+      arr[k + 1] = ymin;
+      arr[k + 2] = x2;
+      arr[k + 3] = y2;
+      k += 4;
+    }
+  if (y1 >= ymin && y2 < ymin)
+    {
+      arr[k] = x1 + m * (ymin - y1);
+      arr[k + 1] = ymin;
+      k += 2;
+    }
+}
+
+void
+main ()
+{
+  int gdriver = DETECT, gmode, n, poly[20];
+  float xi, yi, xf, yf, polyy[20];
+  clrscr ();
+  cout << "Coordinates of rectangular clip window :\nxmin,ymin             :";
+  cin >> xmin >> ymin;
+  cout << "xmax,ymax             :";
+  cin >> xmax >> ymax;
+  cout << "\n\nPolygon to be clipped :\nNumber of sides       :";
+  cin >> n;
+  cout << "Enter the coordinates :";
+  for (int i = 0; i < 2 * n; i++)
+    cin >> polyy[i];
+  polyy[i] = polyy[0];
+  polyy[i + 1] = polyy[1];
+  for (i = 0; i < 2 * n + 2; i++)
+    poly[i] = round (polyy[i]);
+  initgraph (&gdriver, &gmode, "C:\\TC\\BGI");
+  setcolor (RED);
+  rectangle (xmin, ymax, xmax, ymin);
+  cout << "\t\tUNCLIPPED POLYGON";
+  setcolor (WHITE);
+  fillpoly (n, poly);
+  getch ();
+  cleardevice ();
+  k = 0;
+  for (i = 0; i < 2 * n; i += 2)
+    clipl (polyy[i], polyy[i + 1], polyy[i + 2], polyy[i + 3]);
+  n = k / 2;
+  for (i = 0; i < k; i++)
+    polyy[i] = arr[i];
+  polyy[i] = polyy[0];
+  polyy[i + 1] = polyy[1];
+  k = 0;
+  for (i = 0; i < 2 * n; i += 2)
+    clipt (polyy[i], polyy[i + 1], polyy[i + 2], polyy[i + 3]);
+  n = k / 2;
+  for (i = 0; i < k; i++)
+    polyy[i] = arr[i];
+  polyy[i] = polyy[0];
+  polyy[i + 1] = polyy[1];
+  k = 0;
+  for (i = 0; i < 2 * n; i += 2)
+    clipr (polyy[i], polyy[i + 1], polyy[i + 2], polyy[i + 3]);
+  n = k / 2;
+  for (i = 0; i < k; i++)
+    polyy[i] = arr[i];
+  polyy[i] = polyy[0];
+  polyy[i + 1] = polyy[1];
+  k = 0;
+  for (i = 0; i < 2 * n; i += 2)
+    clipb (polyy[i], polyy[i + 1], polyy[i + 2], polyy[i + 3]);
+  for (i = 0; i < k; i++)
+    poly[i] = round (arr[i]);
+  if (k)
+    fillpoly (k / 2, poly);
+  setcolor (RED);
+  rectangle (xmin, ymax, xmax, ymin);
+  cout << "\tCLIPPED POLYGON";
+  getch ();
+  closegraph ();
+}
+
+
+```

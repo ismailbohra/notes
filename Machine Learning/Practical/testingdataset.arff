@@ -1,0 +1,22 @@
+% Testing Dataset
+@RELATION students_who_program
+
+@ATTRIBUTE  enrollment_number string
+@ATTRIBUTE  student_name string
+@ATTRIBUTE  department {CS, IT, EE, ME, CE}
+@ATTRIBUTE  coordinator {Deepak-Jain, Bhupendra-Panchal, Sardar-Safdar-Khan, Sucheta-Dalal}
+@ATTRIBUTE  age real
+@ATTRIBUTE  gender {Male, Female}
+@ATTRIBUTE can_program{yes,no}
+
+@DATA
+"EN19CS301110", "Dhananjay Porwal", CS, Bhupendra-Panchal, 21, Male, yes
+"EN19CE301210", "Baldev Puri", CE, Deepak-Jain, 20, Male,no
+"EN19IT301123", "Yasmin Sing", IT, Sardar-Safdar-Khan, 19, Female, yes
+"EN19CS301111", "Chinmay Srivastava", CS, Bhupendra-Panchal, 18, Female, yes
+"EN19EE302123", "Aruna Mishra", EE, Sucheta-Dalal, 22, Female, no
+"EN19CE301346", "Zahir Kar", CE, Deepak-Jain, 21, Female, no
+"EN19CS301376", "Chirag Solanki", CS, Bhupendra-Panchal, 21, Male, yes
+"EN19EE301212", "Munaf Mahadeo", EE, Sucheta-Dalal, 20, Male, no
+"EN19IT301222", "Charandeep Shah", CS, Sardar-Safdar-Khan, 19, Male, yes
+
